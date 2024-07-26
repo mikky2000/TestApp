@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Email Template</title>
+  </head>
+  <body>
+    <div style="text-align: left;"><img src="https://uswcdn.azureedge.net/images/email-images/usw_logo.png" alt="University of South Wales logo"></div>
+#if($identity.primaryIdentityType!="STUDENT")
+<p>Hello $identity.firstname,</p>
+<p>Welcome to the University of South Wales.</p>
+<p>Your account and university email address is <a style="text-decoration: none; color: #333;"> $identity.email </a></p>
+<p><strong>Temporary Password: </strong>$identity.uniAdInitialPassword</p>
+<p>To gain access for first time and set your own password, please visit <a href="https://myapps.microsoft.com/">Microsoft MyApps.</a> Copy your email address (above) into the &lsquo;sign-in&rsquo; field, then click &lsquo;Next&rsquo;.</p>
+<p>You will be prompted to enter a temporary password.</p>
+<p>Upon successful sign-in, you will be asked to complete some additional security information and then choose your own new password.</p>
+<p>Please visit our <a href="https://its.southwales.ac.uk/it-support/">IT Services website</a> if you need to get in touch for support.</p>
+<p>Kind Regards,</p>
+<p>IT Services.</p>
+<p><br>Helo $identity.firstname,</p>
+<p>Croeso i Brifysgol De Cymru.</p>
+<p><strong>Enw defnyddiwr: </strong> <a style="text-decoration: none; color: #333;"> $identity.email </a></p>
+<p><strong>Cyfrinair dros dro: </strong>$identity.uniAdInitialPassword</p>
+<p>I gael mynediad am y tro cyntaf a gosod eich cyfrinair eich hun, ewch I <a href="https://myapps.microsoft.com/">Microsoft MyApps</a>. Cop&iuml;wch eich cyfeiriad e-bost (uchod) i'r maes 'mewngofnodi', yna cliciwch 'Nesaf'.</p>
+<p>Fe'ch anogir i roi cyfrinair dros dro.</p>
+<p>Ar &ocirc;l mewngofnodi llwyddiannus, gofynnir i chi gwblhau rhywfaint o wybodaeth ddiogelwch ychwanegol ac yna dewis eich cyfrinair newydd eich hun.</p>
+<p>Ewch i'n  <a href="https://its.southwales.ac.uk/cymraeg/">gwefan Gwasanaethau TG</a> os oes angen i chi gysylltu am gymorth.</p>
+<p>Cofion cynnes</p>
+<p>Gwasanaethau TG</p>
+#end#if($identity.primaryIdentityType=="STUDENT")
+<p>&nbsp;</p>
+#if($identity.studentResidentialStatusCode=="O")
+<p>Hello $identity.firstname,</p>
+<p>Welcome to the University of South Wales. This email contains important information about getting your journey started with us.</p>
+<p><strong> Step 1 - IT Set Up</strong></p>
+<p>Before you enrol at the University, you need to create your student IT account.</p>
+<p>In order to set up your new IT account, please click on the link below and enter the username and temporary password when prompted.</p>
+<p><strong>Username: </strong> <a style="text-decoration: none; color: #333;"> $identity.email</a></p>
+<p><strong>Temporary Password: </strong>$identity.uniAdInitialPassword</p>
+<p>You will then be asked to provide more security information and set up a new password.</p>
+<p><strong>Please click on this link to <a href="https://its.southwales.ac.uk/password-and-email/password/">Complete Account Set up</a></strong></p>
+<p><strong>Multi-Factor Authentication (MFA)</strong></p>
+<p>Your IT set up can be completed on any device, but we recommended that you use the Microsoft Authentication App or Google Authenticator App, which you can download free of charge from your mobile app store.</p>
+<p>It is possible to use a mobile phone number instead of the app. If you change your mobile phone number after creating your IT account, you will need to update your MFA details. It's worth remembering that you will probably get a UK mobile number when you arrive in the UK and the app is therefore a better choice for international students.</p>
+<p>You will need to have your mobile phone with you whenever you access your account, this includes the enrolment process. Your enrolment may be delayed if you do not set up your IT account through an authenticator app. Please ensure you set up your IT account before you go to enrolment.</p>
+<p>Please note, if you don&rsquo;t use the app and you change your phone number then you will need to update your MFA details with the new number.</p>
+<p>You will need to have your phone with you whenever you access your account, including throughout the enrolment process.</p>
+<p>Your enrolment may be delayed if you do not set up your IT account through an authenticator app. Please ensure you set up your IT account before you go to enrolment.</p>
+<p>More guidance on setting up your account can be found <a href="https://its.southwales.ac.uk/password-and-email/password/update-your-multi-factor-authentication-mfa">online</a>.</p>
+<p><strong>Step 2 - Enrolment</strong></p>
+<p>International students will need to enrol on campus. Instructions about this will be sent to this email address shortly. Please look out for our emails which will provide you with information on how to enrol.</p>
+<p>We look forward to welcoming you to the University of South Wales!</p>
+<p>Please contact IT Services via phone (+44(0) 1443 482882) if you require help with resetting your password or MFA setup. For further guidance on managing your IT account, please visit <a href="https://its.southwales.ac.uk/password-and-email/password/">IT Account Access and Amendments | University of South Wales.</a></p>
+#end
+<p>&nbsp;</p>
+#if($identity.studentResidentialStatusCode=="H")
+<p>Hello $identity.firstname,</p>
+<p>Welcome to the University of South Wales. This email contains important information about getting your journey started with us.</p>
+<p><strong> Step 1 - IT Set Up</strong></p>
+<p>Before you enrol at the University, you need to create your student IT account.</p>
+<p>In order to set up your new IT account, please click on the link below and enter the username and temporary password when prompted.</p>
+<p><strong>Username: </strong> <a style="text-decoration: none; color: #333;"> $identity.email </a></p>
+<p><strong>Temporary Password: </strong>$identity.uniAdInitialPassword</p>
+<p>You will then be asked to provide more security information and set up a new password.</p>
+<p><strong>Please click on this link to</strong> <a href="https://its.southwales.ac.uk/password-and-email/password/">Complete Account Setup</a></p>
+<p><strong>Multi-Factor Authentication (MFA)</strong></p>
+<p>Set up can be completed on any device but our recommended method for this is the Microsoft Authentication App or Google Authenticator App, which can be found in your mobile app store.</p>
+<p>More guidance on setting up your account can be found <a href="https://its.southwales.ac.uk/password-and-email/password/update-your-multi-factor-authentication-mfa/">Online</a></p>
+<p><strong>Step 2 - Enrolment</strong></p>
+<p>Once your account setup is complete, please keep an eye on your emails for more information on how to enrol. We look forward to welcoming you to the University of South Wales!</p>
+<p>Please contact IT Services via phone (+44(0) 1443 482882) if you require help with resetting your password or MFA setup. For further guidance on managing your IT account, please visit <a href="https://its.southwales.ac.uk/password-and-email/password/"> IT Account Access and Amendments|University of South Wales</a></p>
+<p><br>Helo $identity.firstname,</p>
+<p>Croeso i Brifysgol De Cymru. Mae'r e-bost hwn yn rhoi'r camau y mae angen i chi eu cymryd i ddechrau eich taith Gyda ni.</p>
+<p><strong>Cam 1 - Sefydlu TG</strong></p>
+<p>Er mwyn sefydlu cyfrif TG newydd, cliciwch ar y ddolen isod a nodwch yr enw defnyddiwr a'r cyfrinair dros dro isod pan g&acirc;nt eu hysgogi.</p>
+<p><strong>Enw defnyddiwr: </strong> <a style="text-decoration: none; color: #333;"> $identity.email </a></p>
+<p><strong>Cyfrinair dros dro: </strong>$identity.uniAdInitialPassword</p>
+<p>Yna gofynnir i chi ddarparu mwy o wybodaeth ddiogelwch a sefydlu cyfrinair newydd.</p>
+<p>Cliciwch ar y ddolen hon i <a href="https://its.southwales.ac.uk/cymraeg/Cyfrinair-ac-E-bost/mynediad-gwelliannau-i-gyfrif-tg/"> gosod cyfrif cyflawn.</a></p>
+<p><strong>Dilysu Aml-Ffactor (DAFf)</strong></p>
+<p>Gellir cwblhau'r gosodiad ar unrhyw ddyfais ond ein dull argymelledig ar gyfer hyn yw'r App Dilysu Microsoft neu Google Authenticator App, sydd i'w gael yn eich siop app symudol.</p>
+<p>Gellir dod o hyd i fwy o ganllawiau ar sefydlu'ch cyfrif <a href="https://its.southwales.ac.uk/cymraeg/Cyfrinair-ac-E-bost/mynediad-gwelliannau-i-gyfrif-tg/diweddarwch-eich-dilysiad-aml-ffactor-daff/">ar-lein.</a></p>
+<p><strong>Cam 2 - Cwblhau Cofrestru Ar-lein</strong></p>
+<p>Unwaith y bydd eich gosodiad cyfrif wedi'i gwblhau, cliciwch yma i barhau i gofrestru.</p>
+<p>Rydym yn edrych &lsquo;mlaen at eich croesawu i Brifysgol De Cymru!</p>
+<p>Cysylltwch &acirc;'r Gwasanaethau TG dros y ff&ocirc;n (+44(0) 1443 482882) os oes angen help arnoch i ailosod eich cyfrinair neu osodiad DAFf. Am arweiniad pellach ar reoli eich cyfrif TG, ewch i <a href="https://its.southwales.ac.uk/cymraeg/Cyfrinair-ac-E-bost/mynediad-gwelliannau-i-gyfrif-tg/diweddarwch-eich-dilysiad-aml-ffactor-daff/">Fynediad a Diwygiadau Cyfrif TG</a> | Prifysgol De Cymru.</p>
+#end
+<p>&nbsp;</p>
+#end
+<div style="text-align: center;"><a href="https://www.youtube.com/user/UniSouthWales/"><img src="https://uswcdn.azureedge.net/images/email-images/uswsocialmediayoutubergb.png" alt="" width="5%"></a> &nbsp; <a href="https://twitter.com/unisouthwales/"><img src="https://uswcdn.azureedge.net/images/email-images/uswsocialmediaxrgb1.png" alt="" width="5%"></a> &nbsp; <a href="https://www.facebook.com/UniversityOfSouthWales/"><img src="https://uswcdn.azureedge.net/images/email-images/uswsocialmediafacebookrgb.png" alt="" width="5%"></a> &nbsp; <a href="https://www.tiktok.com/@unisouthwales/"><img src="https://uswcdn.azureedge.net/images/email-images/uswsocialmediatiktokrgb.png" alt="" width="5%"></a> &nbsp; <a href="https://www.instagram.com/unisouthwales/"><img src="https://uswcdn.azureedge.net/images/email-images/uswsocialmediainstagramrgb.png" alt="" width="5%"></a> <br><br></div>
+<div style="text-align: center;"><br><span style="font-size: 10pt;"><a href="https://uso.southwales.ac.uk/information-compliance-unit/data-protection/">Privacy and Data Protection</a> | <a href="https://uso.southwales.ac.uk/swyddfa-ysgrifennydd-y-brifysgol/yr-uned-cydymffurfiaeth/diogelu-data/">Preifatrwydd a Diogelu data</a></span> <br><span style="font-size: 10pt;"><a href="https://www.southwales.ac.uk/cymraeg/">Information through the medium of Welsh is available on our website</a>.</span> <br><span style="font-size: 10pt;"><a href="https://www.southwales.ac.uk/cymraeg/">Mae gwybodaeth trwy gyfrwng y Gymraeg ar gael ar ein gwefan</a>.</span> <br><span style="font-size: 10pt;">&copy; 2024 University of South Wales. All rights reserved.</span> <br><span style="font-size: 10pt;">The University of South Wales is a registered charity. Registration No. 1140312.</span></div>
+
+</div>
+  </body>
+</html>
