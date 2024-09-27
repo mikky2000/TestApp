@@ -4,6 +4,9 @@
 
 
 <b>My first paragraph.</b>
+<b>Name: Mike</b>
+<b>LastName: Obadaki</b>
+<b>Address: 32, Park Place, Sarn.</b>
 
 </body>
 </html>
